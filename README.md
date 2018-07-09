@@ -35,14 +35,10 @@
 
 ## 4. Source code
 
-* Folder Images: the image for pipeline
+* Duplication_check: test code to check the duplicated repo_name + function_name cases.
 
-* Folder Test: a mini piple line to tranferm small amount of data from s3 to postgres.
+* Flask: the visualization and user interface setup.
 
-* Folder Duplication_check: test code to check the duplicated repo_name + function_name cases.
+* Spark: the main python script for pipeline to processing all the input data.
 
-* Folder Flask: the visualization and user interface setup.
-
-* Folder Spark: the main python code for pipeline to processing all the input data.
-
-
+* Test: csv and json read tests.
