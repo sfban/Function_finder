@@ -41,4 +41,4 @@
 
 * Spark: the main python script for pipeline to processing all the input data.
 
-* Test: csv and json read tests.
+* Test: csv and json read tests, textfile .vs. sqlContext
