@@ -125,11 +125,11 @@ def each_repo(repo):
             out_name = find_function_out(line, return_loc, out_name)
             # update the output for the last dictionary
             results[tuple_len - 1]["output"] = out_name [0:50]
-    
+            
     connection.commit()
     cur.close()
     connection.close()
-
+    
     return results
 
 def postgres_insert(results):
@@ -151,6 +151,7 @@ def postgres_insert(results):
         except:
             print "can not insert to postgres"
         connection.commit()
+        
     cur.close()
     connection.close()
 
@@ -190,11 +191,12 @@ def main():
         print "number of repo in total:", repo_num
 
         #foreach
-        #dataframe_rdd.foreach(each_repo)
+        #dataframe_rdd.foreach(each_repo1)
+        
         #map and foreachPartition
-        results = ()
-        results = df_rdd.map(lambda x: each_repo(x))
-        results.foreachPartition(postgres_insert)
+        results_all = ()
+        results_all = dataframe_rdd.map(lambda x: each_repo(x))
+        results_all.foreachPartition(postgres_insert)
 
     #records.collect()
     cur.execute("""SELECT * FROM github_function;""")
