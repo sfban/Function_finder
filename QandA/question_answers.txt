@@ -10,12 +10,17 @@ This pipline was used to extract useful information from big codebase, and to pr
 ** Question 2: How did you find that working with JSON is better?
 
 Answer: I was first trying CSV format, using sc.textFile() to readin the data from AWS s3 bucket. 
-It treated each line as individual RDD. This way, I can not identify the functions's class name and output, those are in different lines of the code content.
+It treated each line as individual RDD. This way, I can not identify the functions's class name and output, 
+those are in different lines of the code content.
 
 So, I using dataframe API, Spark SQL, sqlContext.read.json() to readin the data from AWS s3 in Json format.
-It carried the structure of the data. While Spark SQL only support three types of data source, including Parquet (This is default), Json, and JDBC. CSV is not supported in Spark SQL. 
+It carried the structure of the data. While Spark SQL only support three types of data source, including 
+Parquet (This is default), Json, and JDBC. CSV is not supported in Spark SQL. 
 
-Just googled on webpage, as of Spark version 2.0 and up, spark-csv is part of core Spark functionality and doesn't require a separate library. One could just do for example df = spark.read.format("csv").option("header", "true").load("csvfile.csv"). I haven't try this.
+Just googled, as of Spark version 2.0 and up, spark-csv is part of core Spark functionality and doesn't require 
+a separate library. One could just do for example 
+df = spark.read.format("csv").option("header", "true").load("csvfile.csv"). 
+I haven't tried this.
 
 
 
