@@ -4,7 +4,7 @@
 
 * Enterprise companies can have large, unwieldy code base
 
-* What functionality is available and reusable across different teams?
+* What functionality is available and reusable?
 
 * Build a system to help identify functions in an existing codebase
 
@@ -19,21 +19,23 @@
 
 * Spark-cluster (4 nodes: 1 master and 3 works) was used to read data from AWS S3 and to process the data, i.e., to extract the repository name, class name, function name, function input, and function output, and repo_id from each report. 
 
-* PostgreSQL was used to save the final table for querying.
+* PostgreSQL(AWS RDS) was used to save the final table for querying.
 
 * Flask was used for visualization and user interface. 
 
 
 ## 3. Data Engineer Challenge
 
-* There is duplicated repo_name + function_name reports. 
+* There are duplicated repo_name + function_name reports. 
 
    * Three cases: different input parameters, different classes, and different repo_ids.
 
-* Add Index for fast query in the final PostgreSQL table. 
+* Add Index in the final PostgreSQL table for fast query though user interface. 
 
 
 ## 4. Source code
+
+* Test: csv and json read tests, textfile .vs. sqlContext
 
 * Duplication_check: test code to check the duplicated repo_name + function_name cases.
 
@@ -41,4 +43,4 @@
 
 * Spark: the main python script for pipeline to processing all the input data.
 
-* Test: csv and json read tests, textfile .vs. sqlContext
+* QandA: Demo questions and answers
