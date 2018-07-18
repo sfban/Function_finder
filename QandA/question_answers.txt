@@ -23,5 +23,25 @@ df = spark.read.format("csv").option("header", "true").load("csvfile.csv").
 I haven't tried this.
 
 
+** Question 3: Are you searching only in the latest commits?
+
+Answer: I was useing the content of the source code, the lastest updated one. 
+Yes, it should be samilar as the lastest commits. 
+
+
+** QUestion 4: Are you using deltas or full updates?
+
+Answer: My pipleine is batch processing, only historical data. It could be an extension to add new updateds.
+
+
+** Question 5: You mentioned extension. If you add extension, how would you do that?
+
+Answer: I mentioned several extensions. For example, to identify resursion functions. 
+By defination, recursion function is a function calls itself. The pipelien will scan the contant 
+of the code, to find the same function name, then it can be a resursion function.  
+Another example is the import packages, this information is easy to extract from the source code, after keyword import.
+And it is valueable information to included in the table.
+
+
 
 
