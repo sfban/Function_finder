@@ -40,8 +40,8 @@ Answer: I mentioned several extensions. For example, to identify resursion funct
 By defination, recursion function is a function calls itself. The pipelien will scan the contant 
 of the code, to find the same function name, then it can be a resursion function.  
 Another example is the import packages, this information is easy to extract from the source code, after keyword import.
-And it is valueable information to included in the table.
-And I was also think about to deal with Java.
+And they are valueable informations to be included in the table.
+And I was also think about to deal with other languages, like Java.
 
 
 ** Question 6: Are you looking for duplicate functions within the same repo?
