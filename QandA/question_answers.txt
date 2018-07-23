@@ -41,7 +41,24 @@ By defination, recursion function is a function calls itself. The pipelien will 
 of the code, to find the same function name, then it can be a resursion function.  
 Another example is the import packages, this information is easy to extract from the source code, after keyword import.
 And it is valueable information to included in the table.
+And I was also think about to deal with Java.
 
+
+** Question 6: Are you looking for duplicate functions within the same repo?
+
+Answer: My pipeline was to find all the functions for one repo. 
+The duplicated function names were the ones I double checked to make sure my output are correct. 
+
+
+Question 7: How did you identify the class for one function?
+
+Answer: Python structures by colons and indentation. I identified the class for one function by indentation.
+My script scaned the source code line by line, saved the class name first. Then if I found the function and the position in line was bigger than the previous class, then, the function belonged to this class.
+
+
+Question 8: Comment: You have developed a useful tool for hackers.
+
+Answer: That's is a great comment. Thanks.
 
 
 
