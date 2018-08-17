@@ -79,7 +79,7 @@ def each_repo(repo):
         # find the class by "class "
         pos_class = re.search(r'^[\s]*class\s', line)
         if pos_class != None:
-            class_loc = p_class.span()[1]
+            class_loc = pos_class.span()[1]
             class_name = find_class(line, class_loc)
 
         # find the function by "def "    
